@@ -1,0 +1,12 @@
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Text backup files
+*.bak
+
+# Database
+*.sqlite3
