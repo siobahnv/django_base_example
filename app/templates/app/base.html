@@ -3,6 +3,12 @@
 <html>
     <head><title>Example Title</title></head>
 <body>
+    <div class="navbar">
+        <ul>
+            <li><a href="{% url 'app:home' %}">Home</a></li>
+            <li>Example List</li>
+        </ul>
+    </div>
     <div>
         {% block content %}
         {% endblock %}
