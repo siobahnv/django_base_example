@@ -1,0 +1,11 @@
+{% extends 'app/base.html' %}
+
+{% load staticfiles %}
+{% block css %}
+{% static 'app/css/myapp.css' %}
+{% static 'app/css/person.css' %}
+{% endblock %}
+
+{% block content %}
+<p>This so and so person's personal homepage!</p>
+{% endblock %}

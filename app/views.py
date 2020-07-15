@@ -6,3 +6,6 @@ def home(request):
 
 def example_list(request):
     return render(request, 'app/example_list.html', {})
+
+def person(request):
+    return render(request, 'app/person.html', {})

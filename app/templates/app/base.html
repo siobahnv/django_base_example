@@ -1,4 +1,7 @@
 {% load staticfiles %}
+<head>
+    <link rel="stylesheet" href="{% block css %}{% endblock %}">
+</head>
 
 <html>
     <head><title>Example Title</title></head>
@@ -7,6 +10,7 @@
         <ul>
             <li><a href="{% url 'app:home' %}">Home</a></li>
             <li><a href="{% url 'app:example_list' %}">Example List</a></li>
+            <li><a href="{% url 'app:person' %}">Person</a></li>
         </ul>
     </div>
     <div>
