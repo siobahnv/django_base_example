@@ -2,4 +2,11 @@
 
 {% block content %}
 <p>This is the content that will be inserted!</p>
+
+<ul>
+    {% for person in example_list %}
+    <li>{{ person.name }}</li>
+    {% endfor %}
+</ul>
+
 {% endblock %}
