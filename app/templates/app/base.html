@@ -1,8 +1,7 @@
 {% load static %}
 
 <head>
-    <link rel="stylesheet" href="{% static 'app/css/myapp.css' %}">
-    <link rel="stylesheet" href="{% block customCSS %}{% endblock %}">
+    <link rel="stylesheet" href="{% static 'css/myapp.css' %}">
 </head>
 
 <html>
@@ -15,7 +14,7 @@
 
             {% if example_list %}
             {% for person in example_list %}
-            <li><a href="{% url 'app:person' person.id %}">{{ person.name }}</a></li>
+            <li><a href="{% url 'app:person' person.id %}">{{ person.first_name }}</a></li>
             {% endfor %}
             {% endif %}
         </ul>

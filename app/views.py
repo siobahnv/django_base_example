@@ -3,6 +3,8 @@ from django.views import generic
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse, reverse_lazy
 
+from django.forms.models import model_to_dict
+
 from .models import *
 
 def getPersonList():
@@ -28,9 +30,10 @@ def example_list(request):
 
 def person(request, person_id):
     person = get_object_or_404(Example, pk=person_id)
+    person_dict = model_to_dict(person)
     example_list = getPersonList()
     context = {
-        'person': person,
+        'person': person_dict,
         'example_list': example_list
         }
     return render(request, 'app/person.html', context)

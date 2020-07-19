@@ -17,3 +17,11 @@ urlpatterns += [
     path('<int:pk>/update/', views.ExampleUpdate.as_view(), name='example_update'),
     path('<int:pk>/delete/', views.ExampleDelete.as_view(), name='example_delete'),
 ]
+
+# Trying to get CSS to work locally
+from django.conf import settings
+from django.conf.urls.static import static
+
+urlpatterns += [
+    # ... the rest of your URLconf goes here ...
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
