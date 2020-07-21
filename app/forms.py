@@ -9,8 +9,6 @@ class EditPlayerModelForm(ModelForm):
         fields = '__all__'
     
 class EditBirdieModelForm(ModelForm):
-    hole_number = CharField()
-
     class Meta:
         model = Birdie
         fields = '__all__'

@@ -72,13 +72,13 @@ class PlayerDelete(DeleteView):
 class BirdieCreate(CreateView):
     model = Birdie
     fields = '__all__'
-    success_url = reverse_lazy('app:list')
+    success_url = reverse_lazy('app:home')
 
 class BirdieUpdate(UpdateView):
     model = Birdie
     fields = '__all__'
-    success_url = reverse_lazy('app:list')
+    success_url = reverse_lazy('app:home')
 
 class BirdieDelete(DeleteView):
     model = Birdie
-    success_url = reverse_lazy('app:list')
+    success_url = reverse_lazy('app:home')
