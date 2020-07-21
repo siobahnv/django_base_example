@@ -4,8 +4,8 @@
 <p>This is the content that will be inserted!</p>
 
 <ul>
-    {% for person in player_list %}
-    <li>{{ person.first_name }}</li>
+    {% for birdie in birdie_list %}
+        <li>{{ birdie.date }}: {{ birdie.player.first_name }}: {{ birdie.course.name }} - Hole number: {{ birdie.hole }}</li>
     {% endfor %}
 </ul>
 

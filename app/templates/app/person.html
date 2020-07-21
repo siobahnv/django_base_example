@@ -4,4 +4,13 @@
 
 {% block content %}
 <p>This so and so {{ person.first_name }}'s personal homepage!</p>
+
+<ul>
+    {% if player_birdie_list %}
+        {% for birdie in player_birdie_list %}
+            <li>{{ birdie.date }}: {{ birdie.course.name }} - Hole number: {{ birdie.hole }}</li>
+        {% endfor %}
+    {% endif %}
+</ul>
+
 {% endblock %}

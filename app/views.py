@@ -24,7 +24,11 @@ def getBirdieList():
 
 def home(request):
     player_list = getPersonList()
-    context = {'player_list': player_list}
+    birdie_list = getBirdieList()
+    context = {
+        'player_list': player_list, # Necessary for nav in base.html
+        'birdie_list': birdie_list
+        }
     return render(request, 'app/home.html', context)
 
 def player_list(request):
@@ -48,9 +52,14 @@ def birdie_list(request):
 def person(request, person_id):
     person = get_object_or_404(Player, pk=person_id)
     person_dict = model_to_dict(person)
+
     player_list = getPersonList()
+
+    player_birdie_list = Birdie.objects.all().filter(player=person)
+
     context = {
         'person': person_dict,
+        'player_birdie_list': player_birdie_list,
         'player_list': player_list # Necessary for nav in base.html
         }
     return render(request, 'app/person.html', context)
