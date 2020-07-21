@@ -5,7 +5,8 @@ app_name = "app"
 urlpatterns = [
     path('', views.home, name='home'),
     path('home/', views.home, name='home'),
-    path('list/', views.example_list, name='example_list'),
+    path('players/', views.player_list, name='player_list'),
+    path('list/', views.birdie_list, name='birdie_list')
 ]
 
 urlpatterns += [
@@ -13,9 +14,9 @@ urlpatterns += [
 ]
 
 urlpatterns += [  
-    path('create/', views.ExampleCreate.as_view(), name='example_create'),
-    path('<int:pk>/update/', views.ExampleUpdate.as_view(), name='example_update'),
-    path('<int:pk>/delete/', views.ExampleDelete.as_view(), name='example_delete'),
+    path('create/', views.BirdieCreate.as_view(), name='birdie_create'),
+    path('<int:pk>/update/', views.BirdieUpdate.as_view(), name='birdie_update'),
+    path('<int:pk>/delete/', views.BirdieDelete.as_view(), name='birdie_delete'),
 ]
 
 # Trying to get CSS to work locally

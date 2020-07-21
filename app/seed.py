@@ -1,4 +1,4 @@
-from app.models import Example, User
+from app.models import Player, User, Course, Birdie
 
 def seedTheUserData():
     player_file = ["Bryan", "Greg", "JoHannah"]
@@ -12,6 +12,23 @@ def seedTheUserData():
         new_player.set_password("lolz")
         new_player.save()
 
+def seedTheCourseData():
+    courses = [
+        "Broadmoor",
+        "Camas Meadows",
+        "Colwood",
+        "Heron Lakes Great Blue",
+        "Heron Lakes Greenback",
+        "Tri Mountain"
+    ]
+
+    for course in courses:
+        new_course = Course(
+            name=course
+        )
+        new_course.save()
+
 def seedEverything():
     seedTheUserData()
+    seedTheCourseData()
     print("Finished seeding!")

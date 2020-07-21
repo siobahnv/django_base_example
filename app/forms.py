@@ -1,10 +1,16 @@
 
 from django import forms
-from django.forms import ModelForm
-from .models import Example
+from django.forms import ModelForm, CharField
+from .models import Player, Birdie
 
-class EditExampleModelForm(ModelForm):
+class EditPlayerModelForm(ModelForm):
     class Meta:
-        model = Example
+        model = Player
         fields = '__all__'
-        exclude = ('tags',)
+    
+class EditBirdieModelForm(ModelForm):
+    hole_number = CharField()
+
+    class Meta:
+        model = Birdie
+        fields = '__all__'

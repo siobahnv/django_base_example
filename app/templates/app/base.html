@@ -5,15 +5,20 @@
 </head>
 
 <html>
-    <head><title>Example Title</title></head>
+    <head>
+        <title>
+        {% block title %}
+        {% endblock %}
+        </title>
+    </head>
 <body>
     <div class="navbar">
         <ul>
             <li><a href="{% url 'app:home' %}">Home</a></li>
-            <li><a href="{% url 'app:example_list' %}">Example List</a></li>
+            <li><a href="{% url 'app:birdie_list' %}">Birdie List</a></li>
 
-            {% if example_list %}
-            {% for person in example_list %}
+            {% if player_list %}
+            {% for person in player_list %}
             <li><a href="{% url 'app:person' person.id %}">{{ person.first_name }}</a></li>
             {% endfor %}
             {% endif %}
